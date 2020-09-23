@@ -59,6 +59,9 @@ app.post('/api/user/login',(req,res)=>{
     });
 });
 
+app.get('/',(req,res)=>{
+    res.json({"Hello": "I first deployment in Heroku"})
+})
 
 app.get('/api/user/auth',auth, (req,res)=>{
     res.status(200).json({
@@ -79,6 +82,8 @@ app.get('/api/user/logout',auth,(req,res)=>{
         })
     })
 })
+
+
 
 
 const port = process.env.PORT || 5000
